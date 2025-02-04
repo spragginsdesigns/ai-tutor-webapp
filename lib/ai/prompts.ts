@@ -71,7 +71,7 @@ export const systemPrompt = ({
 }: {
   selectedChatModel: string;
 }) => {
-  return `${regularPrompt}\n\n${tutorPrompt}`;
+  return tutorPrompt;
 };
 
 export const codePrompt = `
