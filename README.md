@@ -1,61 +1,105 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Next.js AI Chatbot</h1>
-</a>
+# AI Study Buddy for Kids 🎓
 
 <p align="center">
-  An Open-Source AI Chatbot Template Built With Next.js and the AI SDK by Vercel.
+  An engaging, kid-friendly AI tutor built with Next.js that makes learning fun and interactive.
 </p>
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a>
+  <a href="#how-it-works"><strong>How It Works</strong></a> ·
+  <a href="#running-locally"><strong>Running Locally</strong></a>
 </p>
 <br/>
 
 ## Features
 
-- [Next.js](https://nextjs.org) App Router
-  - Advanced routing for seamless navigation and performance
-  - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
-- [AI SDK](https://sdk.vercel.ai/docs)
-  - Unified API for generating text, structured objects, and tool calls with LLMs
-  - Hooks for building dynamic chat and generative user interfaces
-  - Supports OpenAI (default), Anthropic, Cohere, and other model providers
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
-- Data Persistence
-  - [Vercel Postgres powered by Neon](https://vercel.com/storage/postgres) for saving chat history and user data
-  - [Vercel Blob](https://vercel.com/storage/blob) for efficient file storage
-- [NextAuth.js](https://github.com/nextauthjs/next-auth)
-  - Simple and secure authentication
+- 🤗 **Encouraging Learning Environment**
+  - Patient, step-by-step guidance
+  - Positive reinforcement and celebration of progress
+  - Kid-friendly language and engaging emojis
 
-## Model Providers
+- 🧩 **Interactive Problem Solving**
+  - Breaks down complex problems into manageable parts
+  - Uses relatable examples (cookies, toys, etc.)
+  - Never gives direct answers - guides students to discover solutions
 
-This template ships with OpenAI `gpt-4o` as the default. However, with the [AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://sdk.vercel.ai/providers/ai-sdk-providers) with just a few lines of code.
+- 📚 **Educational Focus Areas**
+  - Math problems with real-world applications
+  - Science exploration and discovery
+  - Pattern recognition and logical thinking
+  - Money management and practical skills
 
-## Deploy Your Own
+- 🛠️ **Technical Foundation**
+  - Built with [Next.js](https://nextjs.org) for optimal performance
+  - [AI SDK](https://sdk.vercel.ai/docs) for natural conversations
+  - [DeepSeek](https://deepseek.ai) model optimized for tutoring
+  - Beautiful UI with [shadcn/ui](https://ui.shadcn.com)
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
+## How It Works
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot&env=AUTH_SECRET,OPENAI_API_KEY&envDescription=Learn%20more%20about%20how%20to%20get%20the%20API%20Keys%20for%20the%20application&envLink=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&demo-title=AI%20Chatbot&demo-description=An%20Open-Source%20AI%20Chatbot%20Template%20Built%20With%20Next.js%20and%20the%20AI%20SDK%20by%20Vercel.&demo-url=https%3A%2F%2Fchat.vercel.ai&stores=[{%22type%22:%22postgres%22},{%22type%22:%22blob%22}])
+The AI tutor follows core educational principles:
 
-## Running locally
+1. **Ask, Don't Tell**
+   - Uses open-ended questions
+   - Encourages critical thinking
+   - Helps students break down problems
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+2. **Scaffold Understanding**
+   - Relates new concepts to familiar examples
+   - Builds confidence through gradual progress
+   - Makes learning relevant to kids' experiences
 
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various OpenAI and authentication provider accounts.
+3. **Step-by-Step Guidance**
+   - Structured problem-solving approach
+   - Regular check-ins for understanding
+   - Adaptable to each student's pace
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
+## Running Locally
 
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/ai-tutor-webapp.git
+cd ai-tutor-webapp
+```
+
+2. Install dependencies:
 ```bash
 pnpm install
+```
+
+3. Copy `.env.example` to `.env` and configure your environment variables:
+```bash
+cp .env.example .env
+```
+
+4. Start the development server:
+```bash
 pnpm dev
 ```
 
-Your app template should now be running on [localhost:3000](http://localhost:3000/).
+Your AI tutor should now be running at [http://localhost:3000](http://localhost:3000).
+
+## Environment Variables
+
+Create a `.env` file with the following variables:
+
+```bash
+# Authentication (required for user sessions)
+AUTH_SECRET=your-secret-here
+
+# AI Model Configuration
+AI_MODEL_KEY=your-api-key-here
+
+# Database (for storing chat history)
+DATABASE_URL=your-database-url
+```
+
+> Note: Never commit your `.env` file or share your API keys publicly.
+
+## Contributing
+
+We welcome contributions that help make learning more engaging and effective for kids! Please feel free to submit issues and pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
