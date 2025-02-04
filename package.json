@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@ai-sdk/fireworks": "^0.1.8",
+    "@ai-sdk/groq": "^1.1.7",
     "@ai-sdk/openai": "1.1.9",
     "@codemirror/lang-javascript": "^6.2.2",
     "@codemirror/lang-python": "^6.1.6",
