@@ -71,13 +71,7 @@ export const systemPrompt = ({
 }: {
   selectedChatModel: string;
 }) => {
-  if (selectedChatModel === 'chat-model-reasoning') {
-    return regularPrompt;
-  } else if (selectedChatModel === 'chat-model-tutor') {
-    return `${regularPrompt}\n\n${tutorPrompt}`;
-  } else {
-    return `${regularPrompt}\n\n${blocksPrompt}`;
-  }
+  return `${regularPrompt}\n\n${tutorPrompt}`;
 };
 
 export const codePrompt = `

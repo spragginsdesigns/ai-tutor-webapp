@@ -32,8 +32,7 @@ export async function POST(request: Request) {
   const {
     id,
     messages,
-    selectedChatModel,
-  }: { id: string; messages: Array<Message>; selectedChatModel: string } =
+  }: { id: string; messages: Array<Message> } =
     await request.json();
 
   const session = await auth();
@@ -62,19 +61,16 @@ export async function POST(request: Request) {
   return createDataStreamResponse({
     execute: (dataStream) => {
       const result = streamText({
-        model: myProvider.languageModel(selectedChatModel),
-        system: systemPrompt({ selectedChatModel }),
+        model: myProvider.languageModel('chat-model-tutor'),
+        system: systemPrompt({ selectedChatModel: 'chat-model-tutor' }),
         messages,
         maxSteps: 5,
-        experimental_activeTools:
-          selectedChatModel === 'chat-model-reasoning'
-            ? []
-            : [
-                'getWeather',
-                'createDocument',
-                'updateDocument',
-                'requestSuggestions',
-              ],
+        experimental_activeTools: [
+          'getWeather',
+          'createDocument',
+          'updateDocument',
+          'requestSuggestions',
+        ],
         experimental_transform: smoothStream({ chunking: 'word' }),
         experimental_generateMessageId: generateUUID,
         tools: {
