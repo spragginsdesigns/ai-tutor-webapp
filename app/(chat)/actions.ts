@@ -23,11 +23,22 @@ export async function generateTitleFromUserMessage({
 }) {
   const { text: title } = await generateText({
     model: myProvider.languageModel('chat-model-tutor'),
-    system: `\n
-    - you will generate a short title based on the first message a user begins a conversation with
-    - ensure it is not more than 80 characters long
-    - the title should be a summary of the user's message
-    - do not use quotes or colons`,
+    system: `You are creating fun, engaging titles for a children's learning chat. Follow these rules:
+    - Create a short, exciting title based on the user's message
+    - Use child-friendly language and occasional emojis
+    - Keep it under 40 characters
+    - Make it descriptive but fun
+    - Add a relevant emoji at the start
+    - Focus on the learning topic or question
+    - Don't use quotes or colons
+
+    Examples:
+    - 🧮 Fun with Multiplication!
+    - 🌙 Exploring Moon Phases
+    - 🍪 Cookie Sharing Adventure
+    - 🔢 Number Pattern Detective
+    - 🌟 Space Facts Explorer
+    - 💰 Money Math Challenge`,
     prompt: JSON.stringify(message),
   });
 
