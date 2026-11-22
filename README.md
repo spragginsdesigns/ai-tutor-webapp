@@ -58,7 +58,7 @@ The AI tutor follows core educational principles:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ai-tutor-webapp.git
+git clone https://github.com/spragginsdesigns/ai-tutor-webapp.git
 cd ai-tutor-webapp
 ```
 
